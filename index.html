@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apolinariu's Barber - Barbearia Premium</title>
+  <meta name="description" content="Mais que uma barbearia, um estilo de vida. Experiência única em Costa de Caparica.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .text-gradient-silver {
+      background: linear-gradient(to bottom, #ffffff, #e5e5e5, #9ca3af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+    }
+
+    .service-card:hover {
+      background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.05) 100%);
+      border-color: rgba(255, 193, 7, 0.6);
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+    }
+
+    /* App download section styles */
+    #app-download {
+      position: relative;
+    }
+
+    #app-download .app-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.12;
+    }
+
+    #app-download .app-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85));
+    }
+
+    .app-cta {
+      display: inline-block;
+      background: #f6c220;
+      color: #0b0b0b;
+      padding: 14px 34px;
+      border-radius: 6px;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .app-cta:hover {
+      background: #f3b21a;
+    }
+
+    .app-badges {
+      display: inline-flex;
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      background: #0b0b0b;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+    }
+
+    .app-badge i {
+      font-size: 26px;
+    }
+
+    .app-badge span {
+      font-size: 14px;
+      line-height: 1.05;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+    <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tighter uppercase">
+        <a href=""> APOLINARIU'S<span class="text-gray-500"> BARBER</span></a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <div id="nav-links" class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="#services" class="hover:text-white transition-colors nav-link">SERVIÇOS</a>
+        <a href="#about" class="hover:text-white transition-colors nav-link">SOBRE</a>
+        <a href="#team" class="hover:text-white transition-colors nav-link">EQUIPA</a>
+        <a href="#gallery" class="hover:text-white transition-colors nav-link">GALERIA</a>
+      </div>
+      <div class="flex items-center gap-2 md:gap-4">
+        <div class="flex items-center gap-1.5 bg-white/5 rounded p-2 border border-white/10">
+          <button
+            class="lang-btn px-3 sm:px-3 py-2 sm:py-1 text-sm sm:text-xs font-bold transition-colors bg-white text-black rounded"
+            data-lang="pt">PT</button>
+          <button
+            class="lang-btn px-3 sm:px-3 py-2 sm:py-1 text-sm sm:text-xs font-bold transition-colors text-gray-400 hover:text-white rounded"
+            data-lang="en">EN</button>
+          <button
+            class="lang-btn px-3 sm:px-3 py-2 sm:py-1 text-sm sm:text-xs font-bold transition-colors text-gray-400 hover:text-white rounded"
+            data-lang="es">ES</button>
+          <button class="lang-btn px-3 py-1 text-xs font-bold transition-colors text-gray-400 hover:text-white"
+            data-lang="fr">FR</button>
+        </div>
+        <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white text-black px-6 py-2 text-sm font-bold hover:bg-gray-200 transition-colors uppercase tracking-wide schedule-btn">
+
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 right-0 bg-black p-4 border-b border-white/10 z-40">
+    <a href="#services"
+      class="block py-5 px-3 text-lg sm:text-base font-semibold text-gray-200 hover:text-white hover:bg-gray-900/50 rounded nav-link">SERVIÇOS</a>
+    <a href="#about"
+      class="block py-5 px-3 text-lg sm:text-base font-semibold text-gray-200 hover:text-white hover:bg-gray-900/50 rounded nav-link">SOBRE</a>
+    <a href="#team"
+      class="block py-5 px-3 text-lg sm:text-base font-semibold text-gray-200 hover:text-white hover:bg-gray-900/50 rounded nav-link">EQUIPA</a>
+    <a href="#gallery"
+      class="block py-5 px-3 text-lg sm:text-base font-semibold text-gray-200 hover:text-white hover:bg-gray-900/50 rounded nav-link">GALERIA</a>
+  </div>
+
+  <!-- Hero Section with Carousel -->
+  <section
+    class="relative pt-24 pb-16 sm:pt-32 md:pt-48 md:pb-32 overflow-hidden min-h-screen sm:min-h-[90vh] flex items-center">
+    <div class="absolute inset-0 z-0">
+      <img id="hero-bg-img" src="public/classic-modern-barbershop-interior-bw.jpg" alt="Barbershop Interior"
+        class="w-full h-full object-cover opacity-70 sm:opacity-50 transition-opacity duration-1000">
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black"></div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+      <div class="max-w-4xl">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 border border-white/20 rounded-full text-sm sm:text-xs font-medium text-gray-400 mb-6 sm:mb-8">
+          <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+          <span id="hero-badge">Barbershop</span>
+        </div>
+        <!-- Fixed hero title structure with proper yellow color -->
+        <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
+          <span id="hero-title" class="block text-yellow-400">TESOURA,</span>
+          <span id="hero-highlight" class="block text-gradient-silver">PENTE E NAVALHA</span>
+          <span id="hero-subtitle" class="block text-2xl md:text-3xl font-normal text-gray-400 mt-4">Melhor que um, só
+            dois!</span>
+        </h1>
+        <p id="hero-desc"
+          class="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed mb-10 sm:mb-12 font-light">
+          Corte GC passa por uma experiência única cultivo da antiga barbearia italiana
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white text-black px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-bold hover:bg-gray-100 transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2 group schedule-btn-hero min-h-[56px] w-full sm:w-auto rounded-lg">
+            <span class="schedule-btn-text">AGENDAR CORTE</span>
+            <i class="fas fa-chevron-right text-sm group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="flex gap-2 mt-12">
+          <button class="carousel-indicator w-12 h-1 bg-white transition-all duration-300" data-slide="0"></button>
+          <button class="carousel-indicator w-12 h-1 bg-white/30 hover:bg-white/50 transition-all duration-300"
+            data-slide="1"></button>
+          <button class="carousel-indicator w-12 h-1 bg-white/30 hover:bg-white/50 transition-all duration-300"
+            data-slide="2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Download Section (moved above Services) -->
+  <!-- App Promo Banner -->
+  <section
+    class="py-8 sm:py-12 relative bg-gradient-to-r from-yellow-400/10 via-transparent to-yellow-400/10 border-t border-b border-yellow-400/20">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex-1">
+          <h3 id="banner-app-title" class="text-xl sm:text-2xl font-bold text-white mb-2">Baixe nosso aplicativo</h3>
+          <p id="banner-app-desc" class="text-gray-400 text-sm sm:text-base">Tenha acesso fácil a agendamentos,
+            promoções e muito mais na
+            palma da sua mão</p>
+        </div>
+        <a href="#app-download-top" id="banner-app-btn"
+          class="bg-yellow-400 text-black font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-yellow-300 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/50 whitespace-nowrap">
+          Baixar Agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 sm:py-24 relative">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 sm:mb-16 gap-6 sm:gap-8">
+        <div>
+          <!-- Ensured services title is yellow -->
+          <h2
+            class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-3 sm:mb-4 text-yellow-400 services-title">
+            MENU DE SERVIÇOS</h2>
+          <p class="text-gray-400 max-w-md text-sm sm:text-lg services-subtitle">Protocolos exclusivos para o homem
+            moderno.</p>
+        </div>
+      </div>
+
+      <div id="services-list" class="space-y-6 sm:space-y-8 md:space-y-12">
+        <!-- Services will be rendered here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details Modal -->
+  <div id="service-modal" class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+    <div class="rounded-xl max-w-md w-full shadow-2xl animate-fade-in"
+      style="background: #0f0f0f; border: 1px solid rgba(255, 193, 7, 0.3);">
+      <div class="p-7">
+        <div class="flex justify-between items-start mb-6">
+          <div>
+            <h3 id="modal-service-name" class="text-3xl font-bold text-yellow-400 mb-2">Corte GC</h3>
+            <p id="modal-service-category" class="text-gray-400 text-sm font-semibold tracking-wider">SERVIÇOS GERAIS
+            </p>
+          </div>
+          <button onclick="closeServiceModal()"
+            class="text-gray-400 hover:text-yellow-400 transition-colors text-2xl font-bold">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="border-t border-gray-700 pt-5">
+          <p id="modal-service-desc" class="text-white mb-7 leading-relaxed text-sm font-light">
+            <!-- Service description will be inserted here -->
+          </p>
+
+          <div class="flex items-center justify-between p-5 rounded-lg mb-6 border border-gray-700"
+            style="background: #1a1a1a;">
+            <span class="text-gray-400 font-medium">Price</span>
+            <span id="modal-service-price" class="text-2xl font-bold text-yellow-400">20,00€</span>
+          </div>
+
+          <button onclick="scheduleService()"
+            class="w-full bg-yellow-400 text-black py-3 font-bold hover:bg-yellow-300 transition-colors rounded-lg tracking-wide">
+            Agendar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white text-black">
+    <div class="container mx-auto px-4 sm:px-6">
+      <!-- Made about title yellow and visible on white background -->
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-6 sm:mb-8 text-yellow-500 about-title">
+        SOBRE APOLINARIU'S</h2>
+      <div class="max-w-3xl">
+        <p class="text-sm sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed about-intro"></p>
+        <ul id="about-points" class="space-y-4 mb-8">
+          <!-- Points will be rendered here -->
+        </ul>
+        <div class="border-l-4 border-gray-700 p-6 bg-gray-50">
+          <p class="text-lg text-gray-700 font-medium italic about-mission"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biography Section -->
+  <section id="team" class="py-16 sm:py-24 bg-gradient-to-b from-gray-900 to-black">
+    <div class="container mx-auto px-4 sm:px-6">
+      <h2
+        class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-3 sm:mb-4 text-yellow-400 text-center team-title">
+        NOSSA EQUIPA</h2>
+      <p class="text-xs sm:text-base text-gray-400 text-center mb-10 sm:mb-16 team-subtitle">Profissionais dedicados à
+        excelência</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 max-w-6xl mx-auto">
+        <!-- Alexandre Card -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-md mb-6">
+            <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-yellow-400/10 z-10"></div>
+            <img src="/public/WhatsApp_Image_2025-12-22_at_12.06.21-removebg-preview.png" alt="Alexandre Apolinário"
+              class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute -bottom-1 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+          </div>
+          <div
+            class="bg-gray-900/50 backdrop-blur border border-yellow-400/20 rounded-lg p-8 hover:border-yellow-400/40 transition-colors duration-300">
+            <h3 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 alexandre-name">Alexandre Apolinário</h3>
+            <p class="text-gray-300 text-sm leading-relaxed space-y-4 alexandre-bio">
+              <span class="block">Natural de Belo Horizonte, capital de Minas Gerais, Alexandre vive em Portugal desde
+                2017, onde consolidou a sua carreira e aperfeiçoou o seu olhar internacional sobre tendências, técnicas
+                e atendimento ao cliente.</span>
+              <span class="block">Iniciou a sua trajetória aos 14 anos, movido pela paixão pelo estilo, precisão e
+                transformação que a barbearia proporciona.</span>
+              <span class="block">Possui formação em academias de renome mundial como Vidal Sassoon, MENSPIRE Academy e
+                Aspectus Academy, o que reflete um padrão elevado de técnica, criatividade e excelência. O seu trabalho
+                combina o clássico e o contemporâneo, sempre focado na identidade e personalidade de cada
+                cliente.</span>
+              <span class="block italic text-yellow-400/80">"Para Alex, para além de reproduzir é trazer ao cliente uma
+                imagem dele que ele ainda não conhece!"</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Brena Card -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-md mb-6">
+            <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-yellow-400/10 z-10"></div>
+            <img src="/public/WhatsApp Image 2025-12-18 at 21.20.11.jpeg" alt="Brena Apolinário"
+              onerror="this.src='/public/brena.svg'"
+              class="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute -bottom-1 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+          </div>
+          <div
+            class="bg-gray-900/50 backdrop-blur border border-yellow-400/20 rounded-lg p-8 hover:border-yellow-400/40 transition-colors duration-300">
+            <h3 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 brena-name">Brena Apolinário</h3>
+            <p class="text-gray-300 text-sm leading-relaxed space-y-4 brena-bio">
+              <span class="block">Manicure profissional, 26 anos, com 2 anos de atuação no segmento da beleza. Natural
+                de Belo Horizonte, destaca-se pelo olhar criterioso, técnica refinada e compromisso com a
+                excelência.</span>
+              <span class="block">Seu trabalho é pautado na elegância, no cuidado minucioso e na valorização da beleza
+                natural das unhas, proporcionando uma experiência sofisticada e personalizada para cada cliente.</span>
+              <span class="block italic text-yellow-400/80">"Cada detalhe é uma oportunidade de transformação!"</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 sm:py-24 bg-black px-4 sm:px-0">
+    <div class="container mx-auto px-0 sm:px-6">
+      <!-- Ensured gallery title is yellow -->
+      <h2
+        class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-3 sm:mb-4 text-yellow-400 gallery-title">
+        GALERIA</h2>
+      <p class="text-sm sm:text-base text-gray-400 mb-8 sm:mb-12 gallery-subtitle">Conheça o nosso espaço</p>
+
+      <div class="relative max-w-4xl mx-auto">
+        <div class="relative aspect-video bg-gray-900 overflow-hidden rounded-lg">
+          <img id="gallery-img" src="/barbershop-gallery-1-bw-silver.jpg" alt="Gallery"
+            class="w-full h-full object-cover transition-opacity duration-500">
+        </div>
+
+        <button id="gallery-prev"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-4 transition-colors">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="gallery-next"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-4 transition-colors">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="flex gap-2 justify-center mt-6">
+          <button class="gallery-indicator w-3 h-3 rounded-full bg-white transition-all" data-gallery="0"></button>
+          <button class="gallery-indicator w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all"
+            data-gallery="1"></button>
+          <button class="gallery-indicator w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all"
+            data-gallery="2"></button>
+          <button class="gallery-indicator w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all"
+            data-gallery="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="py-16 sm:py-24 bg-black px-4 sm:px-0">
+    <div class="container mx-auto px-0 sm:px-6">
+      <!-- Made location title yellow -->
+      <h2
+        class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-6 sm:mb-8 text-yellow-400 text-center location-title">
+        LOCALIZAÇÃO</h2>
+      <div class="relative w-full h-[500px] rounded-lg overflow-hidden border border-white/20">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.4!2d-9.19!3d38.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM4JzI2LjQiTiA5wrAxMScyNC4wIlc!5e0!3m2!1spt-PT!2spt!4v1234567890"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-32 relative overflow-hidden px-4 sm:px-0">
+    <div class="absolute inset-0 bg-black">
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#222_1px,transparent_1px),linear-gradient(to_bottom,#222_1px,transparent_1px)] bg-[length:4rem_4rem]">
+      </div>
+    </div>
+
+    <div class="container mx-auto px-0 sm:px-6 relative z-10 text-center">
+      <!-- Made CTA title yellow -->
+      <h2 class="text-2xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-6 sm:mb-8">
+        <span class="text-yellow-400 cta-title">PRONTO PARA O</span><br>
+        <span class="text-gradient-silver cta-highlight">UPGRADE?</span>
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto mb-8 sm:mb-12 text-sm sm:text-lg cta-desc">
+        Agende seu horário agora e descubra por que somos a referência em estética masculina.
+      </p>
+      <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-white text-black px-6 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold hover:scale-105 transition-transform duration-300 cta-button">
+        AGENDAR AGORA
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Chatbot widget -->
+  <div id="chatbot" class="fixed bottom-6 right-6 z-50">
+    <button id="chatbot-toggle"
+      class="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-transform">
+      <i class="fas fa-comments"></i>
+      <span>Ajuda</span>
+    </button>
+
+    <div id="chatbot-box"
+      class="hidden mt-3 w-80 md:w-96 bg-black/95 text-white rounded-lg shadow-xl overflow-hidden border border-yellow-400/30">
+      <div class="p-3 bg-gray-900 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-yellow-400 flex items-center justify-center text-black">
+            <i class="fas fa-cut"></i>
+          </div>
+          <div class="leading-tight">
+            <div class="font-semibold">Alice Apolinariu's</div>
+            <div class="text-xs text-gray-400">Estamos aqui para ajudar</div>
+          </div>
+        </div>
+        <button id="chatbot-close" class="text-gray-400 hover:text-white text-lg">&times;</button>
+      </div>
+      <div id="chatbot-messages" class="p-3 h-56 overflow-y-auto text-sm space-y-3 bg-black/80"></div>
+
+      <div class="p-3 border-t border-white/5 bg-black/80 flex justify-center items-center gap-2">
+        <button
+          class="chat-lang min-w-12 px-3 py-1.5 bg-white/5 hover:bg-yellow-400/30 rounded text-xs transition font-bold"
+          data-lang="pt">PT</button>
+        <button
+          class="chat-lang min-w-12 px-3 py-1.5 bg-white/5 hover:bg-yellow-400/30 rounded text-xs transition font-bold"
+          data-lang="en">EN</button>
+        <button
+          class="chat-lang min-w-12 px-3 py-1.5 bg-white/5 hover:bg-yellow-400/30 rounded text-xs transition font-bold"
+          data-lang="es">ES</button>
+        <button
+          class="chat-lang min-w-12 px-3 py-1.5 bg-white/5 hover:bg-yellow-400/30 rounded text-xs transition font-bold"
+          data-lang="fr">FR</button>
+      </div>
+
+      <div id="chatbot-quick" class="p-3 border-t border-white/5 bg-black/80 flex flex-wrap gap-2">
+        <button class="chat-quick px-3 py-1 bg-white/5 hover:bg-yellow-400/20 rounded text-xs transition"
+          data-msg="Quero agendar">Quero agendar</button>
+        <button class="chat-quick px-3 py-1 bg-white/5 hover:bg-yellow-400/20 rounded text-xs transition"
+          data-msg="Ver horários">Horários</button>
+        <button class="chat-quick px-3 py-1 bg-white/5 hover:bg-yellow-400/20 rounded text-xs transition"
+          data-msg="Onde ficam">Localização</button>
+        <button class="chat-quick px-3 py-1 bg-white/5 hover:bg-yellow-400/20 rounded text-xs transition"
+          data-msg="Formas de pagamento">Pagamentos</button>
+        <button class="chat-quick px-3 py-1 bg-white/5 hover:bg-yellow-400/20 rounded text-xs transition"
+          data-msg="Promoções">Promoções</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Download Section -->
+  <section id="app-download-top" class="py-12 sm:py-16 relative overflow-hidden">
+    <div class="app-overlay"></div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 text-center py-8 sm:py-16">
+      <a id="app-cta-top" href="https://instagram.com/apolinarius_barbershop"
+        class="app-cta uppercase text-lg sm:text-2xl px-10 sm:px-16 py-5 sm:py-7 font-bold inline-block rounded-lg hover:shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-105"
+        target="_blank" rel="noopener noreferrer">INICIE ESSA EXPERIÊNCIA</a>
+      <p id="app-title-top" class="text-gray-300 mb-2 text-lg sm:text-2xl font-semibold mt-4 sm:mt-6">Baixe o aplicativo
+        nas
+        Stores</p>
+      <p id="app-subtitle-top" class="text-gray-500 mb-8 text-sm sm:text-base">Instale agora e comece a usar</p>
+
+      <div class="mt-6 sm:mt-8 app-badges flex justify-center gap-4 flex-wrap">
+        <a id="app-link-apple-top" class="app-badge"
+          href="https://apps.apple.com/br/app/apolin%C3%A1rius-barbershop/id6756811302?l=en-GB" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fab fa-apple text-2xl sm:text-3xl"></i>
+          <span id="app-badge-apple-top" class="text-base sm:text-lg font-medium">Baixar na<br>App Store</span>
+        </a>
+
+        <a id="app-link-play-top" class="app-badge"
+          href="https://play.google.com/store/apps/details?id=com.cliqhair.apolinariusbarbershop" target="_blank"
+          rel="noopener noreferrer">
+          <i class="fab fa-google-play text-2xl sm:text-3xl"></i>
+          <span id="app-badge-play-top" class="text-base sm:text-lg font-medium">Disponível no<br>Google Play</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 bg-black pt-20 pb-10">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-2">
+          <div class="text-2xl font-bold tracking-tighter uppercase mb-6">
+            APOLINARIU'S<span class="text-gray-500"> BARBER</span>
+          </div>
+          <p class="text-gray-500 max-w-sm footer-desc">
+            Redefinindo o padrão de barbearias através de tecnologia, design e excelência técnica.
+          </p>
+          <div class="mt-6 space-y-3">
+            <a href="https://instagram.com/apolinarius_barbershop" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+              <i class="fab fa-instagram w-5 h-5 shrink-0 mt-1"></i>
+              <span>apolinarius_barbershop</span>
+            </a>
+            <a href="mailto:EmailEmpresaafa@hotmail.com"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+              <i class="fas fa-envelope w-5 h-5 shrink-0 mt-1"></i>
+              <span>EmailEmpresaafa@hotmail.com</span>
+            </a>
+
+            </a>
+            <a href="https://wa.me/+351937371510"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fab fa-whatsapp w-5 h-5 shrink-0 mt-1"></i>
+              <span>+351 937 371 510</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <a href="">
+            <h4 class="font-bold mb-6 text-white footer-location-title">LOCALIZAÇÃO</h4>
+          </a>
+          <div class="flex gap-3 text-gray-500 mb-4">
+            <i class="fas fa-map-marker-alt w-5 h-5 shrink-0 mt-1"></i>
+            <a
+              href="https://www.google.com/maps/search/Miguel+Torga+36,+Loja+A,+2825-326+Costa+de+Caparica/@38.646361,-9.2416429,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+              <p>Miguel Torga 36, Loja A, 2825-326 Costa de Caparica</p>
+            </a>
+          </div>
+
+        </div>
+        <div>
+          <h4 class="font-bold mb-6 text-white footer-hours-title">HORÁRIOS</h4>
+          <div class="flex gap-3 text-gray-500">
+            <i class="fas fa-clock w-5 h-5 shrink-0 mt-1"></i>
+            <ul class="space-y-2">
+              <li class="footer-hours-week">Seg - Sex: 10h00 – 20h00</li>
+              <li class="footer-hours-sat">Sáb: 09h00 – 18h00</li>
+              <li class="footer-hours-sun">Dom: Fechado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-8 border border-white/5 rounded-sm p-6 bg-white/[0.02]">
+        <p class="text-center text-gray-500 text-sm footer-cta">
+          Agende seu próximo corte e faça parte da família Apolinariu's
+        </p>
+        <div class="flex justify-center gap-4 mt-4">
+          <span title="Visa" class="text-gray-300 text-xl"><i class="fab fa-cc-visa"></i></span>
+          <span title="Mastercard" class="text-gray-300 text-xl"><i class="fab fa-cc-mastercard"></i></span>
+          <span title="Maestro" class="text-gray-300 text-xl"><i class="fab fa-cc-mastercard"></i></span>
+          <span title="American Express" class="text-gray-300 text-xl"><i class="fab fa-cc-amex"></i></span>
+          <span title="PayPal" class="text-gray-300 text-xl"><i class="fab fa-paypal"></i></span>
+          <span title="Apple Pay" class="text-gray-300 text-xl"><i class="fab fa-apple"></i></span>
+          <span title="Google Pay" class="text-gray-300 text-xl"><i class="fab fa-google-pay"></i></span>
+          <span title="SEPA (Transferência bancária)" class="text-gray-300 text-sm px-2">SEPA</span>
+          <span title="Klarna (BNPL)" class="text-gray-300 text-sm px-2">Klarna</span>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+        <div class="flex flex-col gap-1">
+          <p>&copy; 2025 APOLINARIU'S BARBER. <span class="footer-rights">Todos os direitos reservados.</span></p>
+          <p class="text-xs text-gray-700">Desenvolvido por João Gabriel Osorio Barros & Gabriel Apolinário</p>
+        </div>
+        <div class="flex gap-6">
+          <a href="#services" class="hover:text-white transition-colors">SERVIÇOS</a>
+          <a href="#gallery" class="hover:text-white transition-colors">GALERIA</a>
+          <a href="#about" class="hover:text-white transition-colors">SOBRE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Translations object
+    const translations = {
+      pt: {
+        nav: { services: "SERVIÇOS", about: "SOBRE", team: "EQUIPE", gallery: "GALERIA", schedule: "AGENDAR" },
+        hero: [
+          {
+            badge: "Barbershop",
+            title: "TESOURA,",
+            highlight: "PENTE E NAVALHA",
+            subtitle: "Melhor que um, só dois!",
+            desc: "Corte GC passa por uma experiência única cultivo da antiga barbearia italiana",
+            img: "public/classic-modern-barbershop-interior-bw.jpg"
+          },
+          {
+            badge: "Professional Barbershop",
+            title: "MAIS QUE UMA BARBEARIA,",
+            highlight: "UM ESTILO DE VIDA",
+            subtitle: "Mais que vender serviços de barbearia",
+            desc: "Nossa missão é oferecer uma experiência única",
+            img: "public/barber-cutting-hair-classic-bw.jpg"
+          },
+          {
+            badge: "Barbershop",
+            title: "APOLINARIU'S",
+            highlight: "BARBERHOUSE",
+            subtitle: "NOSSA MISSÃO.",
+            desc: "A nossa missão mantém se a mesma, tratar dos nossos gentlemen da melhor forma e proporcionar uma experiência única.",
+            img: "public/barbershop-lounge-bw.jpg"
+          }
+        ],
+        services: {
+          title: "MENU DE SERVIÇOS",
+          subtitle: "Protocolos exclusivos para o homem moderno.",
+          categories: [
+            {
+              name: "SERVIÇOS GERAIS",
+              items: [
+                { name: "Corte maquina", price: "10,00€", desc: "Corte clássico à máquina com acabamento preciso. Ideal para um visual limpo e profissional, mantendo volume no topo." },
+                { name: "Corte simples", price: "21,00€", desc: "Corte realizado integralmente com tesoura, permitindo maior precisão e controle. Perfeito para estilos personalizados e texturas variadas." },
+                { name: "Ritual Barba", price: "16,50€", desc: "Serviço completo de barba com aparação, alinhamento e acabamento. Inclui óleos e produtos premium para hidratação." },
+                { name: "Full Shave", price: "17,50€", desc: "Barbear completo com navalha tradicional, proporcionando um acabamento impecável e suave. Acompanhado de balm refrescante." },
+                { name: "Corte e Barba", price: "32,00€", desc: "Pacote completo incluindo corte GC e aparação da barba. O serviço ideal para quem deseja estar sempre impecável." },
+                { name: "Lavagem e Styling", price: "10,00€", desc: "Lavagem com produtos premium e styling do cabelo. Ideal para destacar o corte e deixar o cabelo visivelmente mais saudável." },
+                { name: "Sobrancelhas", price: "8,50€", desc: "Desenho e ajuste profissional das sobrancelhas com precisão. Realça o rosto e completa a estética do visual." },
+                { name: "Selagem", price: "33,00€", desc: "Tratamento de reconstrução e selagem capilar para cabelos danificados ou ressecados. Deixa o cabelo brilhante e resistente." },
+                { name: "Desondulação Capilar", price: "35,00€", desc: "Tratamento profissional de desondulação para cabelos ondulados ou cacheados. Promove maciez e define o fio." }
+              ]
+            },
+            {
+              name: "DIRETOR CRIATIVO",
+              items: [
+                { name: "Corte", price: "27,00€", desc: "Corte executado pelo diretor criativo com técnicas avançadas e visão artística. Ideal para quem busca um estilo único e diferenciado." },
+                { name: "Barba", price: "23,00€", desc: "Aparação de barba com expertise profissional. Desenho personalizado que complementa o tipo de rosto do cliente." },
+                { name: "Corte e Barba", price: "37,00€", desc: "Experiência completa com o diretor criativo. Corte e barba trabalhados em harmonia para um resultado excepcional." }
+              ]
+            },
+            {
+              name: "SALA EXCLUSIVA",
+              items: [
+                { name: "Corte", price: "30,00€", desc: "Corte em ambiente exclusivo e privado. Serviço premium com toda atenção dedicada e possibilidade de consultoria detalhada." },
+                { name: "Barba", price: "25,00€", desc: "Aparação de barba em sala exclusiva com conforto e privacidade. Consultoria completa sobre cuidados e produtos." },
+                { name: "Corte e Barba", price: "45,00€", desc: "Experiência premium em sala exclusiva. Corte e barba com máxima atenção aos detalhes e conforto absoluto." }
+              ]
+            }
+          ]
+        },
+        about: {
+          title: "SOBRE APOLINARIU'S",
+          intro: "A Apolinariu's Barbershop é mais que um espaço de barbearia. Somos um refúgio de excelência onde tradição e modernidade se encontram.",
+          points: [
+            "Mais de uma década de experiência em cuidados masculinos premium",
+            "Profissionais certificados e altamente qualificados",
+            "Ambiente sofisticado e acolhedor para total relaxamento",
+            "Compromisso com a excelência em cada detalhe",
+            "Consultoria personalizada para cada cliente"
+          ],
+          mission: "Nossa missão é oferecer uma experiência única, tratando cada cliente como um gentleman, proporcionando não apenas um corte, mas um ritual de elevação pessoal."
+        },
+        gallery: {
+          title: "GALERIA",
+          subtitle: "Conheça o nosso espaço"
+        },
+        cta: {
+          title: "PRONTO PARA O",
+          highlight: "UPGRADE?",
+          desc: "Agende seu horário agora e descubra por que somos a referência em estética masculina.",
+          button: "AGENDAR AGORA"
+        },
+        appBanner: {
+          title: "Baixe nosso aplicativo",
+          desc: "Tenha acesso fácil a agendamentos, promoções e muito mais na palma da sua mão",
+          button: "Baixar Agora"
+        },
+        app: {
+          title: "Baixe o aplicativo nas Stores",
+          subtitle: "Instale agora e comece a usar",
+          button: "INICIE ESSA EXPERIÊNCIA"
+        },
+        team: {
+          title: "NOSSA EQUIPE",
+          subtitle: "Profissionais dedicados à excelência",
+          members: [
+            {
+              name: "Alexandre Apolinário",
+              bio: "Natural de Belo Horizonte, capital de Minas Gerais, Alexandre vive em Portugal desde 2017, onde consolidou a sua carreira e aperfeiçoou o seu olhar internacional sobre tendências, técnicas e atendimento ao cliente.\n\nIniciou a sua trajetória aos 14 anos, movido pela paixão pelo estilo, precisão e transformação que a barbearia proporciona.\n\nPossui formação em academias de renome mundial como Vidal Sassoon, MENSPIRE Academy e Aspectus Academy, o que reflete um padrão elevado de técnica, criatividade e excelência. O seu trabalho combina o clássico e o contemporâneo, sempre focado na identidade e personalidade de cada cliente.\n\nPara Alex, para além de reproduzir é trazer ao cliente uma imagem dele que ele ainda não conhece!"
+            },
+            {
+              name: "Brena Apolinário",
+              bio: "Manicure profissional, 26 anos, com 2 anos de atuação no segmento da beleza. Natural de Belo Horizonte, destaca-se pelo olhar criterioso, técnica refinada e compromisso com a excelência.\n\nSeu trabalho é pautado na elegância, no cuidado minucioso e na valorização da beleza natural das unhas, proporcionando uma experiência sofisticada e personalizada para cada cliente.\n\nCada detalhe é uma oportunidade de transformação!"
+            }
+          ]
+        },
+        app: {
+          title: "Baixe o aplicativo nas Stores",
+          subtitle: "Instale agora e comece a usar",
+          button: "INICIE ESSA EXPERIÊNCIA"
+        },
+        footer: {
+          desc: "Redefinindo o padrão de barbearias através de tecnologia, design e excelência técnica.",
+          location: "LOCALIZAÇÃO",
+          hours: "HORÁRIOS",
+          days: { week: "Seg - Sex: 10h00 – 20h00", sat: "Sáb: 09h00 – 18h00", sun: "Dom: Fechado" },
+          rights: "Todos os direitos reservados.",
+          cta: "Agende seu próximo corte e faça parte da família Apolinariu's"
+        }
+      },
+      en: {
+        nav: { services: "SERVICES", about: "ABOUT", team: "TEAM", gallery: "GALLERY", schedule: "TO SCHEDULE" },
+        hero: [
+          {
+            badge: "Barbershop",
+            title: "SCISSORS,",
+            highlight: "COMB AND RAZOR",
+            subtitle: "Better than one, only two!",
+            desc: "GC cut goes through a unique experience cultivation of the old Italian barbershop",
+            img: "public/classic-modern-barbershop-interior-bw.jpg"
+          },
+          {
+            badge: "Professional Barbershop",
+            title: "MORE THAN A BARBERSHOP,",
+            highlight: "A LIFESTYLE",
+            subtitle: "More than selling barbershop services",
+            desc: "Our mission is to offer a unique experience",
+            img: "public/barber-cutting-hair-classic-bw.jpg"
+          },
+          {
+            badge: "Barbershop",
+            title: "APOLINARIU'S",
+            highlight: "BARBERHOUSE",
+            subtitle: "OUR MISSION.",
+            desc: "Our mission remains the same, to treat our gentlemen in the best way and provide a unique experience.",
+            img: "public/barbershop-lounge-bw.jpg"
+          }
+        ],
+        services: {
+          title: "SERVICES MENU",
+          subtitle: "Exclusive protocols for the modern man.",
+          categories: [
+            {
+              name: "GENERAL SERVICES",
+              items: [
+                { name: "GC Cut", price: "€20.00", desc: "Classic machine cut with precise finishing. Ideal for a clean and professional look, maintaining volume on top." },
+                { name: "Scissors Cut", price: "€21.00", desc: "Cut performed entirely with scissors, allowing greater precision and control. Perfect for personalized styles and varied textures." },
+                { name: "Beard Ritual", price: "€16.50", desc: "Complete beard service with trimming, alignment and finishing. Includes premium oils and products for hydration." },
+                { name: "Full Shave", price: "€17.50", desc: "Complete shave with traditional razor, providing impeccable and smooth finishing. Accompanied by refreshing balm." },
+                { name: "Cut & Beard", price: "€32.00", desc: "Complete package including GC cut and beard trimming. The ideal service for those who want to always look impeccable." },
+                { name: "Wash & Styling", price: "€10.00", desc: "Wash with premium products and hair styling. Ideal for highlighting the cut and leaving hair visibly healthier." },
+                { name: "Eyebrows", price: "€8.50", desc: "Professional eyebrow design and adjustment with precision. Enhances the face and completes your visual aesthetic." },
+                { name: "Sealing", price: "€33.00", desc: "Hair reconstruction and sealing treatment for damaged or dry hair. Leaves hair shiny and resistant." },
+                { name: "Hair Straightening", price: "€35.00", desc: "Professional straightening treatment for wavy or curly hair. Promotes smoothness and defines the strand." }
+              ]
+            },
+            {
+              name: "CREATIVE DIRECTOR",
+              items: [
+                { name: "Cut", price: "€27.00", desc: "Cut executed by creative director with advanced techniques and artistic vision. Ideal for those seeking a unique and differentiated style." },
+                { name: "Beard", price: "€23.00", desc: "Beard trimming with professional expertise. Personalized design that complements the client's face type." },
+                { name: "Cut & Beard", price: "€37.00", desc: "Complete experience with the creative director. Cut and beard worked in harmony for an exceptional result." }
+              ]
+            },
+            {
+              name: "EXCLUSIVE ROOM",
+              items: [
+                { name: "Cut", price: "€30.00", desc: "Cut in exclusive and private environment. Premium service with dedicated attention and possibility of detailed consultation." },
+                { name: "Beard", price: "€25.00", desc: "Beard trimming in exclusive room with comfort and privacy. Complete consultation on care and products." },
+                { name: "Cut & Beard", price: "€45.00", desc: "Premium experience in exclusive room. Cut and beard with maximum attention to detail and absolute comfort." }
+              ]
+            }
+          ]
+        },
+        about: {
+          title: "ABOUT APOLINARIU'S",
+          intro: "Apolinariu's Barbershop is more than a barbershop space. We are a haven of excellence where tradition and modernity meet.",
+          points: [
+            "Over a decade of experience in premium men's care",
+            "Certified and highly qualified professionals",
+            "Sophisticated and welcoming environment for total relaxation",
+            "Commitment to excellence in every detail",
+            "Personalized consultation for each client"
+          ],
+          mission: "Our mission is to offer a unique experience, treating each client as a gentleman, providing not just a cut, but a ritual of personal elevation."
+        },
+        gallery: {
+          title: "GALLERY",
+          subtitle: "Get to know our space"
+        },
+        cta: {
+          title: "READY FOR THE",
+          highlight: "UPGRADE?",
+          desc: "Book your appointment now and discover why we are the reference in men's aesthetics.",
+          button: "TO SCHEDULE"
+        },
+        app: {
+          title: "Download the app",
+          subtitle: "Install now and start using it",
+          button: "START THIS EXPERIENCE"
+        },
+        team: {
+          title: "OUR TEAM",
+          subtitle: "Professionals dedicated to excellence",
+          members: [
+            {
+              name: "Alexandre Apolinário",
+              bio: "Native of Belo Horizonte, capital of Minas Gerais, Alexandre has lived in Portugal since 2017, where he has established his career and refined his international perspective on trends, techniques and customer service.\n\nHe began his journey at age 14, driven by a passion for style, precision and the transformation that barbershop work provides.\n\nHe has training from world-renowned academies such as Vidal Sassoon, MENSPIRE Academy and Aspectus Academy, which reflects a high standard of technique, creativity and excellence. His work combines the classic and the contemporary, always focused on the identity and personality of each client.\n\nFor Alex, beyond reproducing is bringing to the client an image of himself that he has never known!"
+            },
+            {
+              name: "Brena Apolinário",
+              bio: "Professional nail technician, 26 years old, with 2 years of experience in the beauty segment. Native of Belo Horizonte, she stands out for her discerning eye, refined technique and commitment to excellence.\n\nHer work is based on elegance, meticulous care and the appreciation of the natural beauty of nails, providing a sophisticated and personalized experience for each client.\n\nEvery detail is an opportunity for transformation!"
+            }
+          ]
+        },
+        appBanner: {
+          title: "Download our app",
+          desc: "Easy access to appointments, promotions and much more in the palm of your hand",
+          button: "Download Now"
+        },
+        app: {
+          title: "Download the app from Stores",
+          subtitle: "Install now and start using it",
+          button: "START THIS EXPERIENCE"
+        },
+        footer: {
+          desc: "Redefining the barbershop standard through technology, design and technical excellence.",
+          location: "LOCATION",
+          hours: "HOURS",
+          days: { week: "Mon - Fri: 10am – 8pm", sat: "Sat: 9am – 6pm", sun: "Sun: Closed" },
+          rights: "All rights reserved.",
+          cta: "Book your next cut and become part of the Apolinariu's family"
+        }
+      },
+      es: {
+        nav: { services: "SERVICIOS", about: "SOBRE", team: "EQUIPO", gallery: "GALERÍA", schedule: "RESERVAR" },
+        hero: [
+          {
+            badge: "Barbería",
+            title: "TIJERAS,",
+            highlight: "PEINE Y NAVAJA",
+            subtitle: "¡Mejor que uno, solo dos!",
+            desc: "El corte GC pasa por una experiencia única de cultivo de la antigua barbería italiana",
+            img: "public/classic-modern-barbershop-interior-bw.jpg"
+          },
+          {
+            badge: "Barbería Profesional",
+            title: "MÁS QUE UNA BARBERÍA,",
+            highlight: "UN ESTILO DE VIDA",
+            subtitle: "Más que vender servicios de barbería",
+            desc: "Nuestra misión es ofrecer una experiencia única",
+            img: "public/barber-cutting-hair-classic-bw.jpg"
+          },
+          {
+            badge: "Barbería",
+            title: "APOLINARIU'S",
+            highlight: "BARBERHOUSE",
+            subtitle: "NUESTRA MISIÓN.",
+            desc: "Nuestra misión sigue siendo la misma, tratar a nuestros caballeros de la mejor manera y proporcionar una experiencia única.",
+            img: "public/barbershop-lounge-bw.jpg"
+          }
+        ],
+        services: {
+          title: "MENÚ DE SERVICIOS",
+          subtitle: "Protocolos exclusivos para el hombre moderno.",
+          categories: [
+            {
+              name: "SERVICIOS GENERALES",
+              items: [
+                { name: "Corte GC", price: "20,00€", desc: "Corte clásico a máquina con acabado preciso. Ideal para una apariencia limpia y profesional, manteniendo volumen en la parte superior." },
+                { name: "Corte Tijeras", price: "21,00€", desc: "Corte realizado íntegramente con tijeras, permitiendo mayor precisión y control. Perfecto para estilos personalizados y texturas variadas." },
+                { name: "Ritual Barba", price: "16,50€", desc: "Servicio completo de barba con recorte, alineación y acabado. Incluye aceites y productos premium para hidratación." },
+                { name: "Afeitado Completo", price: "17,50€", desc: "Afeitado completo con navaja tradicional, proporcionando un acabado impecable y suave. Acompañado de bálsamo refrescante." },
+                { name: "Corte y Barba", price: "32,00€", desc: "Paquete completo que incluye corte GC y recorte de barba. El servicio ideal para quien desea estar siempre impecable." },
+                { name: "Lavado y Peinado", price: "10,00€", desc: "Lavado con productos premium y peinado del cabello. Ideal para destacar el corte y dejar el cabello visiblemente más saludable." },
+                { name: "Cejas", price: "8,50€", desc: "Diseño y ajuste profesional de las cejas con precisión. Realza el rostro y completa la estética de tu aspecto." },
+                { name: "Sellado", price: "33,00€", desc: "Tratamiento de reconstrucción y sellado capilar para cabellos dañados o resecados. Deja el cabello brillante y resistente." },
+                { name: "Alisado Capilar", price: "35,00€", desc: "Tratamiento profesional de alisado para cabellos ondulados o rizados. Promueve suavidad y define el hilo." }
+              ]
+            },
+            {
+              name: "DIRECTOR CREATIVO",
+              items: [
+                { name: "Corte", price: "27,00€", desc: "Corte ejecutado por el director creativo con técnicas avanzadas y visión artística. Ideal para quien busca un estilo único y diferenciado." },
+                { name: "Barba", price: "23,00€", desc: "Recorte de barba con pericia profesional. Diseño personalizado que complementa el tipo de rostro del cliente." },
+                { name: "Corte y Barba", price: "37,00€", desc: "Experiencia completa con el director creativo. Corte y barba trabajados en armonía para un resultado excepcional." }
+              ]
+            },
+            {
+              name: "SALA EXCLUSIVA",
+              items: [
+                { name: "Corte", price: "30,00€", desc: "Corte en ambiente exclusivo y privado. Servicio premium con toda la atención dedicada y posibilidad de consultoría detallada." },
+                { name: "Barba", price: "25,00€", desc: "Recorte de barba en sala exclusiva con comodidad y privacidad. Consultoría completa sobre cuidados y productos." },
+                { name: "Corte y Barba", price: "45,00€", desc: "Experiencia premium en sala exclusiva. Corte y barba trabajados con máxima atención al detalle y comodidad absoluta." }
+              ]
+            }
+          ]
+        },
+        about: {
+          title: "SOBRE APOLINARIU'S",
+          intro: "Apolinariu's Barbershop es más que un espacio de barbería. Somos un refugio de excelencia donde la tradición y la modernidad se encuentran.",
+          points: [
+            "Más de una década de experiencia en cuidado masculino premium",
+            "Profesionales certificados y altamente calificados",
+            "Ambiente sofisticado y acogedor para relajación total",
+            "Compromiso con la excelencia en cada detalle",
+            "Consulta personalizada para cada cliente"
+          ],
+          mission: "Nuestra misión es ofrecer una experiencia única, tratando a cada cliente como un caballero, proporcionando no solo un corte, sino un ritual de elevación personal."
+        },
+        gallery: {
+          title: "GALERÍA",
+          subtitle: "Conoce nuestro espacio"
+        },
+        cta: {
+          title: "¿LISTO PARA LA",
+          highlight: "MEJORA?",
+          desc: "Reserve su cita ahora y descubra por qué somos la referencia en estética masculina.",
+          button: "RESERVAR AHORA"
+        },
+        appBanner: {
+          title: "Descarga nuestra aplicación",
+          desc: "Acceso fácil a citas, promociones y mucho más en la palma de tu mano",
+          button: "Descargar Ahora"
+        },
+        app: {
+          title: "Descarga la app en Stores",
+          subtitle: "Instala ahora y empieza a usarlo",
+          button: "INICIA ESTA EXPERIENCIA"
+        },
+        team: {
+          title: "NUESTRO EQUIPO",
+          subtitle: "Profesionales dedicados a la excelencia",
+          members: [
+            {
+              name: "Alexandre Apolinário",
+              bio: "Natural de Belo Horizonte, capital de Minas Gerais, Alexandre vive en Portugal desde 2017, donde ha consolidado su carrera y perfeccionado su perspectiva internacional sobre tendencias, técnicas y atención al cliente.\n\nComenzó su trayectoria a los 14 años, impulsado por la pasión por el estilo, la precisión y la transformación que proporciona la barbería.\n\nPosee formación en academias de renombre mundial como Vidal Sassoon, MENSPIRE Academy y Aspectus Academy, lo que refleja un alto estándar de técnica, creatividad y excelencia. Su trabajo combina lo clásico y lo contemporáneo, siempre enfocado en la identidad y personalidad de cada cliente.\n\nPara Alex, más allá de reproducir es traer al cliente una imagen de sí mismo que aún no conoce!"
+            },
+            {
+              name: "Brena Apolinário",
+              bio: "Técnica profesional de uñas, 26 años, con 2 años de experiencia en el segmento de belleza. Natural de Belo Horizonte, se destaca por su ojo criterioso, técnica refinada y compromiso con la excelencia.\n\nSu trabajo se basa en la elegancia, el cuidado meticuloso y la valorización de la belleza natural de las uñas, proporcionando una experiencia sofisticada y personalizada para cada cliente.\n\n¡Cada detalle es una oportunidad de transformación!"
+            }
+          ]
+        },
+        footer: {
+          desc: "Redefiniendo el estándar de las barberías a través de la tecnología, el diseño y la excelencia técnica.",
+          location: "UBICACIÓN",
+          hours: "HORARIO",
+          days: { week: "Lun - Vie: 10h00 – 20h00", sat: "Sáb: 09h00 – 18h00", sun: "Dom: Cerrado" },
+          rights: "Todos los derechos reservados.",
+          cta: "Reserve su próximo corte y forme parte de la familia Apolinariu's"
+        }
+      },
+      fr: {
+        nav: { services: "SERVICES", about: "À PROPOS", team: "ÉQUIPE", gallery: "GALERIE", schedule: "RÉSERVER" },
+        hero: [
+          {
+            badge: "Salon de coiffure",
+            title: 'CISEAUX,',
+            highlight: 'PEIGNE ET RASOIR',
+            subtitle: 'Mieux qu\'un, seulement deux!',
+            desc: 'La coupe GC traverse une expérience unique de culture de l\'ancien salon de coiffure italien',
+            img: "public/classic-modern-barbershop-interior-bw.jpg"
+          },
+          {
+            badge: 'Salon de coiffure professionnel',
+            title: 'PLUS QU\'UN SALON DE COIFFURE,',
+            highlight: 'UN MODE DE VIE',
+            subtitle: 'Plus que vendre des services de salon',
+            desc: 'Notre mission est d\'offrir une expérience unique',
+            img: "public/barber-cutting-hair-classic-bw.jpg"
+          },
+          {
+            badge: 'Salon de coiffure',
+            title: "APOLINARIU'S",
+            highlight: 'BARBERHOUSE',
+            subtitle: 'NOTRE MISSION.',
+            desc: 'Notre mission reste la même, traiter nos gentlemen de la meilleure façon et offrir une expérience unique.',
+            img: "public/barbershop-lounge-bw.jpg"
+          }
+        ],
+        services: {
+          title: "MENU DES SERVICES",
+          subtitle: "Protocoles exclusifs pour l'homme moderne.",
+          categories: [
+            {
+              name: "SERVICES GÉNÉRAUX",
+              items: [
+                { name: "Coupe GC", price: "20,00€", desc: "Coupe classique à la machine avec finition précise. Idéale pour une apparence propre et professionnelle, conservant du volume en haut." },
+                { name: "Coupe Ciseaux", price: "21,00€", desc: "Coupe réalisée entièrement aux ciseaux, permettant plus de précision et de contrôle. Parfait pour les styles personnalisés et les textures variées." },
+                { name: "Rituel Barbe", price: "16,50€", desc: "Service complet de barbe avec taille, alignement et finition. Comprend des huiles et des produits premium pour l'hydratation." },
+                { name: "Rasage Complet", price: "17,50€", desc: "Rasage complet au rasoir traditionnel, offrant une finition impeccable et douce. Accompagné d'un baume rafraîchissant." },
+                { name: "Coupe et Barbe", price: "32,00€", desc: "Forfait complet comprenant la coupe GC et la taille de la barbe. Le service idéal pour ceux qui veulent toujours être impeccables." },
+                { name: "Lavage et Coiffage", price: "10,00€", desc: "Lavage avec des produits premium et coiffage des cheveux. Idéal pour mettre en valeur la coupe et laisser les cheveux visiblement plus sains." },
+                { name: "Sourcils", price: "8,50€", desc: "Dessin et ajustement professionnel des sourcils avec précision. Rehausse le visage et complète l'esthétique de votre apparence." },
+                { name: "Scellement", price: "33,00€", desc: "Traitement de reconstruction et de scellement capillaire pour cheveux endommagés ou secs. Laisse les cheveux brillants et résistants." },
+                { name: "Lissage Capillaire", price: "35,00€", desc: "Traitement professionnel de lissage pour cheveux ondulés ou bouclés. Favorise la douceur et définit la fibre." }
+              ]
+            },
+            {
+              name: "DIRECTEUR CRÉATIF",
+              items: [
+                { name: "Coupe", price: "27,00€", desc: "Coupe exécutée par le directeur créatif avec des techniques avancées et une vision artistique. Idéale pour ceux qui recherchent un style unique et différencié." },
+                { name: "Barbe", price: "23,00€", desc: "Taille de barbe avec expertise professionnelle. Dessin personnalisé qui complément le type de visage du client." },
+                { name: "Coupe et Barbe", price: "37,00€", desc: "Expérience complète avec le directeur créatif. Coupe et barbe travaillées en harmonie pour un résultat exceptionnel." }
+              ]
+            },
+            {
+              name: "SALLE EXCLUSIVE",
+              items: [
+                { name: "Coupe", price: "30,00€", desc: "Coupe dans un environnement exclusif et privé. Service premium avec une attention entièrement dédiée et possibilité de consultation détaillée." },
+                { name: "Barbe", price: "25,00€", desc: "Taille de barbe en salle exclusive avec confort et intimité. Consultation complète sur les soins et les produits." },
+                { name: "Coupe et Barbe", price: "45,00€", desc: "Expérience premium en salle exclusive. Coupe et barbe travaillées avec une attention maximale aux détails et un confort absolu." }
+              ]
+            }
+          ]
+        },
+        about: {
+          title: "À PROPOS D'APOLINARIU'S",
+          intro: "Apolinariu's Barbershop est plus qu'un espace de coiffure. Nous sommes un havre d'excellence où tradition et modernité se rencontrent.",
+          points: [
+            "Plus d'une décennie d'expérience dans les soins masculins premium",
+            "Professionnels certifiés et hautement qualifiés",
+            "Environnement sophistiqué et accueillant pour une relaxation totale",
+            "Engagement envers l'excellence dans chaque détail",
+            "Consultation personnalisée pour chaque client"
+          ],
+          mission: "Notre mission est d'offrir une expérience unique, en traitant chaque client comme un gentleman, en fournissant non seulement une coupe, mais un rituel d'élévation personnelle."
+        },
+        gallery: {
+          title: "GALERIE",
+          subtitle: "Découvrez notre espace"
+        },
+        cta: {
+          title: "PRÊT POUR LA",
+          highlight: 'MISE À NIVEAU ?',
+          desc: "Réservez votre rendez-vous maintenant et découvrez pourquoi nous sommes la référence en esthétique masculine.",
+          button: "RÉSERVER MAINTENANT"
+        },
+        appBanner: {
+          title: "Téléchargez notre application",
+          desc: "Accès facile aux rendez-vous, promotions et bien plus dans la paume de votre main",
+          button: "Télécharger Maintenant"
+        },
+        app: {
+          title: "Téléchargez l'application",
+          subtitle: "Installez maintenant et commencez à l’utiliser",
+          button: "COMMENCEZ L'EXPÉRIENCE"
+        },
+        team: {
+          title: "NOTRE ÉQUIPE",
+          subtitle: "Des professionnels dédiés à l'excellence",
+          members: [
+            {
+              name: "Alexandre Apolinário",
+              bio: "Natif de Belo Horizonte, capitale du Minas Gerais, Alexandre vit au Portugal depuis 2017, où il a consolidé sa carrière et affiné sa perspective internationale sur les tendances, les techniques et le service à la clientèle.\n\nIl a commencé son parcours à 14 ans, animé par une passion pour le style, la précision et la transformation que la barberie procure.\n\nIl possède une formation dans des académies de renommée mondiale telles que Vidal Sassoon, MENSPIRE Academy et Aspectus Academy, ce qui reflète un haut standard de technique, de créativité et d'excellence. Son travail combine le classique et le contemporain, toujours axé sur l'identité et la personnalité de chaque client.\n\nPour Alex, au-delà de reproduire, c'est apporter au client une image de lui-même qu'il ne connaît pas encore!"
+            },
+            {
+              name: "Brena Apolinário",
+              bio: "Technicienne professionnelle des ongles, 26 ans, avec 2 ans d'expérience dans le segment de la beauté. Native de Belo Horizonte, elle se distingue par son regard avisé, sa technique raffinée et son engagement envers l'excellence.\n\nSon travail est basé sur l'élégance, le soin méticuleux et la valorisation de la beauté naturelle des ongles, offrant une expérience sophistiquée et personnalisée pour chaque client.\n\nChaque détail est une opportunité de transformation!"
+            }
+          ]
+        },
+        footer: {
+          desc: "Redéfinir la norme des salons de coiffure par la technologie, le design et l'excellence technique.",
+          location: "EMPLACEMENT",
+          hours: "HORAIRES",
+          days: { week: "Lun - Ven : 10h00 – 20h00", sat: "Sam : 09h00 – 18h00", sun: "Dim : Fermé" },
+          rights: "Tous droits réservés.",
+          cta: "Réservez votre prochaine coupe et rejoignez la famille Apolinariu's"
+        }
+      }
+    };
+
+    let currentLang = 'pt';
+    let currentSlide = 0;
+    let currentGalleryImg = 0;
+    let heroInterval;
+    let galleryInterval;
+
+    const galleryImages = [
+      'public/barbershop-gallery-1-bw-silver.jpg',
+      'public/barbershop-gallery-2-bw-silver.jpg',
+      'public/barbershop-gallery-3-bw-silver.jpg',
+      'public/barbershop-gallery-4-bw-silver.jpg'
+    ];
+
+    // Initialize
+    function init() {
+      updateContent();
+      startHeroCarousel();
+      startGalleryCarousel();
+      setupEventListeners();
+      setupChatbot();
+    }
+
+    // Open service modal
+    function openServiceModal(event) {
+      event.preventDefault();
+      const button = event.currentTarget;
+      const service = JSON.parse(button.dataset.service);
+      const category = button.dataset.category;
+
+      document.getElementById('modal-service-name').textContent = service.name;
+      document.getElementById('modal-service-category').textContent = category;
+      document.getElementById('modal-service-price').textContent = service.price;
+      document.getElementById('modal-service-desc').textContent = service.desc || 'Serviço premium com qualidade garantida.';
+
+      document.getElementById('service-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close service modal
+    function closeServiceModal() {
+      document.getElementById('service-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Schedule service
+    function scheduleService() {
+      window.open('https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/', '_blank');
+      closeServiceModal();
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function (event) {
+      const modal = document.getElementById('service-modal');
+      if (event.target === modal) {
+        closeServiceModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeServiceModal();
+      }
+    });
+
+    // Update all content based on current language
+    function updateContent() {
+      const t = translations[currentLang];
+
+      // Update navigation
+      document.querySelectorAll('.nav-link').forEach((link, idx) => {
+        const keys = ['services', 'about', 'team', 'gallery'];
+        link.textContent = t.nav[keys[idx % 4]];
+      });
+
+      document.querySelectorAll('.schedule-btn, .schedule-btn-hero').forEach(btn => {
+        btn.querySelector('span')?.remove();
+        const span = document.createElement('span');
+        span.className = 'schedule-btn-text';
+        span.textContent = t.nav.schedule;
+        btn.prepend(span);
+      });
+
+      // Update hero
+      updateHeroSlide();
+
+      // Update services
+      document.querySelector('.services-title').textContent = t.services.title;
+      document.querySelector('.services-subtitle').textContent = t.services.subtitle;
+
+      const servicesList = document.getElementById('services-list');
+      servicesList.innerHTML = t.services.categories.map(cat => `
+        <div class="space-y-6 sm:space-y-8">
+          <h3 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-yellow-400 border-b-2 border-yellow-400/30 pb-4">${cat.name}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            ${cat.items.map((item, idx) => `
+              <button class="service-card flex flex-col sm:flex-row sm:justify-between sm:items-center p-6 sm:p-5 transition-all duration-300 group cursor-pointer text-left bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 hover:border-yellow-400/30" data-service='${JSON.stringify(item)}' data-category="${cat.name}" onclick="openServiceModal(event)">
+                <span class="text-white font-semibold sm:font-medium group-hover:text-yellow-300 transition-colors text-base sm:text-sm mb-3 sm:mb-0">${item.name}</span>
+                <span class="text-yellow-400 font-bold sm:font-mono text-lg sm:text-lg group-hover:text-yellow-200 transition-colors">${item.price}</span>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+
+
+      // Update about
+      document.querySelector('.about-title').textContent = t.about.title;
+      document.querySelector('.about-intro').textContent = t.about.intro;
+      document.querySelector('.about-mission').textContent = `"${t.about.mission}"`;
+
+      const aboutPoints = document.getElementById('about-points');
+      aboutPoints.innerHTML = t.about.points.map(point => `
+        <li class="flex gap-4 items-start group">
+          <div class="w-2 h-2 bg-gray-700 rounded-full mt-2 shrink-0 group-hover:bg-gray-900 transition-all"></div>
+          <span class="text-gray-700 leading-relaxed">${point}</span>
+        </li>
+      `).join('');
+
+      // Update gallery
+      document.querySelector('.gallery-title').textContent = t.gallery.title;
+      document.querySelector('.gallery-subtitle').textContent = t.gallery.subtitle;
+
+      // Update App Banner
+      const bannerTitle = document.getElementById('banner-app-title');
+      if (bannerTitle && t.appBanner) bannerTitle.textContent = t.appBanner.title;
+      const bannerDesc = document.getElementById('banner-app-desc');
+      if (bannerDesc && t.appBanner) bannerDesc.textContent = t.appBanner.desc;
+      const bannerBtn = document.getElementById('banner-app-btn');
+      if (bannerBtn && t.appBanner) bannerBtn.textContent = t.appBanner.button;
+
+      // Update CTA
+      document.querySelector('.cta-title').textContent = t.cta.title;
+      document.querySelector('.cta-highlight').textContent = t.cta.highlight;
+      document.querySelector('.cta-desc').textContent = t.cta.desc;
+      document.querySelector('.cta-button').textContent = t.cta.button;
+
+      // Update App download section (both top and bottom versions)
+      ['', '-top'].forEach(suffix => {
+        const appTitleEl = document.getElementById('app-title' + suffix);
+        if (appTitleEl) appTitleEl.textContent = t.app?.title || '';
+        const appSubtitleEl = document.getElementById('app-subtitle' + suffix);
+        if (appSubtitleEl) appSubtitleEl.textContent = t.app?.subtitle || '';
+        const appCtaEl = document.getElementById('app-cta' + suffix);
+        if (appCtaEl) appCtaEl.textContent = t.app?.button || appCtaEl.textContent;
+
+        const appBadgeAppleEl = document.getElementById('app-badge-apple' + suffix);
+        if (appBadgeAppleEl) appBadgeAppleEl.innerHTML = t.app?.badgeApple || appBadgeAppleEl.innerHTML;
+        const appBadgePlayEl = document.getElementById('app-badge-play' + suffix);
+        if (appBadgePlayEl) appBadgePlayEl.innerHTML = t.app?.badgePlay || appBadgePlayEl.innerHTML;
+
+        // Optional: set store links if provided in translations
+        const appLinkApple = document.getElementById('app-link-apple' + suffix);
+        if (appLinkApple && t.app?.linkApple) appLinkApple.href = t.app.linkApple;
+        const appLinkPlay = document.getElementById('app-link-play' + suffix);
+        if (appLinkPlay && t.app?.linkPlay) appLinkPlay.href = t.app.linkPlay;
+      });
+
+      // Update team section
+      const teamTitleEl = document.querySelector('.team-title');
+      if (teamTitleEl && t.team) teamTitleEl.textContent = t.team.title;
+      const teamSubtitleEl = document.querySelector('.team-subtitle');
+      if (teamSubtitleEl && t.team) teamSubtitleEl.textContent = t.team.subtitle;
+
+      if (t.team && t.team.members) {
+        const teamCards = document.querySelectorAll('#team .group');
+        teamCards.forEach((card, idx) => {
+          if (t.team.members[idx]) {
+            const member = t.team.members[idx];
+            const nameEl = card.querySelector('h3');
+            const bioEl = card.querySelector('p');
+            if (nameEl) nameEl.textContent = member.name;
+            if (bioEl) {
+              bioEl.innerHTML = member.bio.split('\\n\\n').map(para => `<span class="block">${para}</span>`).join('');
+            }
+          }
+        });
+      }
+
+      // Update footer
+      document.querySelector('.footer-desc').textContent = t.footer.desc;
+      document.querySelector('.footer-location-title').textContent = t.footer.location;
+      document.querySelector('.footer-hours-title').textContent = t.footer.hours;
+      document.querySelector('.footer-hours-week').textContent = t.footer.days.week;
+      document.querySelector('.footer-hours-sat').textContent = t.footer.days.sat;
+      document.querySelector('.footer-hours-sun').textContent = t.footer.days.sun;
+      document.querySelector('.footer-rights').textContent = t.footer.rights;
+      document.querySelector('.footer-cta').textContent = t.footer.cta;
+      document.querySelector('.location-title').textContent = t.footer.location;
+    }
+
+    // Update hero slide
+    function updateHeroSlide() {
+      const t = translations[currentLang];
+      const slide = t.hero[currentSlide];
+
+      document.getElementById('hero-badge').textContent = slide.badge;
+      document.getElementById('hero-title').textContent = slide.title;
+      document.getElementById('hero-highlight').textContent = slide.highlight;
+      document.getElementById('hero-subtitle').textContent = slide.subtitle;
+      document.getElementById('hero-desc').textContent = slide.desc;
+      document.getElementById('hero-bg-img').src = slide.img;
+
+      // Update indicators
+      document.querySelectorAll('.carousel-indicator').forEach((btn, idx) => {
+        btn.className = idx === currentSlide
+          ? 'carousel-indicator w-12 h-1 bg-white transition-all duration-300'
+          : 'carousel-indicator w-12 h-1 bg-white/30 hover:bg-white/50 transition-all duration-300';
+      });
+    }
+
+    // Start hero carousel
+    function startHeroCarousel() {
+      clearInterval(heroInterval);
+      heroInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % 3;
+        updateHeroSlide();
+      }, 8000); // 8 seconds
+    }
+
+    // Start gallery carousel
+    function startGalleryCarousel() {
+      clearInterval(galleryInterval);
+      galleryInterval = setInterval(() => {
+        currentGalleryImg = (currentGalleryImg + 1) % galleryImages.length;
+        updateGalleryImage();
+      }, 8000); // 8 seconds
+    }
+
+    // Update gallery image
+    function updateGalleryImage() {
+      document.getElementById('gallery-img').src = galleryImages[currentGalleryImg];
+
+      document.querySelectorAll('.gallery-indicator').forEach((btn, idx) => {
+        btn.className = idx === currentGalleryImg
+          ? 'gallery-indicator w-3 h-3 rounded-full bg-white transition-all'
+          : 'gallery-indicator w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all';
+      });
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentLang = btn.dataset.lang;
+
+          document.querySelectorAll('.lang-btn').forEach(b => {
+            b.className = 'lang-btn px-3 py-1 text-xs font-bold transition-colors text-gray-400 hover:text-white';
+          });
+          btn.className = 'lang-btn px-3 py-1 text-xs font-bold transition-colors bg-white text-black';
+
+          updateContent();
+        });
+      });
+
+      // Carousel indicators
+      document.querySelectorAll('.carousel-indicator').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentSlide = parseInt(btn.dataset.slide);
+          updateHeroSlide();
+          startHeroCarousel(); // Restart timer
+        });
+      });
+
+      // Gallery controls
+      document.getElementById('gallery-prev').addEventListener('click', () => {
+        currentGalleryImg = (currentGalleryImg - 1 + galleryImages.length) % galleryImages.length;
+        updateGalleryImage();
+        startGalleryCarousel(); // Restart timer
+      });
+
+      document.getElementById('gallery-next').addEventListener('click', () => {
+        currentGalleryImg = (currentGalleryImg + 1) % galleryImages.length;
+        updateGalleryImage();
+        startGalleryCarousel(); // Restart timer
+      });
+
+      document.querySelectorAll('.gallery-indicator').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentGalleryImg = parseInt(btn.dataset.gallery);
+          updateGalleryImage();
+          startGalleryCarousel(); // Restart timer
+        });
+      });
+
+      // Mobile menu
+      document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('mobile-menu').classList.add('hidden');
+          }
+        });
+      });
+    }
+
+    // Initialize on load
+    // --- Chatbot setup -------------------------------------------------
+    function setupChatbot() {
+      const toggle = document.getElementById('chatbot-toggle');
+      const box = document.getElementById('chatbot-box');
+      const closeBtn = document.getElementById('chatbot-close');
+      const messages = document.getElementById('chatbot-messages');
+
+      // Chatbot responses in multiple languages
+      const chatbotResponses = {
+        pt: {
+          greeting: '👋 Olá! Bem-vindo a Apolinariu\'s Barber. Em que posso ajudar?',
+          schedule: '✨ Pode agendar agora na Treatwell: <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank" class="underline font-bold">Abrir agendamento</a>',
+          hours: '⏰ Seg-Sex: 10h00-20h00<br>Sáb: 09h00-18h00<br>Dom: Fechado',
+          services: '✂️ Temos 3 categorias:<br>• Serviços Gerais (10-35€)<br>• Diretor Criativo (23-37€)<br>• Sala Exclusiva (25-45€)<br><br>Qual tem interesse?',
+          location: '📍 Miguel Torga 36, Loja A<br>2825-326 Costa de Caparica<br><a href="https://www.google.com/maps/search/Miguel+Torga+36,+Costa+de+Caparica/@38.646361,-9.2416429" target="_blank" class="underline">Ver no mapa</a>',
+          payment: '💳 Aceitamos:<br>Visa, Mastercard, Amex<br>PayPal, Apple Pay, Google Pay<br>SEPA e Klarna',
+          promo: '🎉 Siga nosso Instagram para promoções:<br><a href="https://instagram.com/apolinarius_barbershop" target="_blank" class="underline">@apolinarius_barbershop</a>',
+          fallback: 'Desculpe, não percebi bem. Pode usar os botões de atalho ou escrever: agendamento, horários, localização, pagamentos ou promoções.'
+        },
+        en: {
+          greeting: '👋 Hello! Welcome to Apolinariu\'s Barber. How can I help you?',
+          schedule: '✨ Book now on Treatwell: <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank" class="underline font-bold">Open booking</a>',
+          hours: '⏰ Mon-Fri: 10:00-20:00<br>Sat: 09:00-18:00<br>Sun: Closed',
+          services: '✂️ We have 3 categories:<br>• General Services (10-35€)<br>• Creative Director (23-37€)<br>• Exclusive Room (25-45€)<br><br>Which interests you?',
+          location: '📍 Miguel Torga 36, Shop A<br>2825-326 Costa de Caparica<br><a href="https://www.google.com/maps/search/Miguel+Torga+36,+Costa+de+Caparica/@38.646361,-9.2416429" target="_blank" class="underline">View on map</a>',
+          payment: '💳 We accept:<br>Visa, Mastercard, Amex<br>PayPal, Apple Pay, Google Pay<br>SEPA and Klarna',
+          promo: '🎉 Follow our Instagram for promotions:<br><a href="https://instagram.com/apolinarius_barbershop" target="_blank" class="underline">@apolinarius_barbershop</a>',
+          fallback: 'Sorry, I didn\'t understand. You can use the quick buttons or write: appointment, hours, location, payments or promotions.'
+        },
+        es: {
+          greeting: '👋 ¡Hola! Bienvenido a Apolinariu\'s Barber. ¿Cómo puedo ayudarte?',
+          schedule: '✨ Reserva ahora en Treatwell: <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank" class="underline font-bold">Abrir reserva</a>',
+          hours: '⏰ Lun-Vie: 10:00-20:00<br>Sáb: 09:00-18:00<br>Dom: Cerrado',
+          services: '✂️ Tenemos 3 categorías:<br>• Servicios Generales (10-35€)<br>• Director Creativo (23-37€)<br>• Sala Exclusiva (25-45€)<br><br>¿Cuál te interesa?',
+          location: '📍 Miguel Torga 36, Tienda A<br>2825-326 Costa de Caparica<br><a href="https://www.google.com/maps/search/Miguel+Torga+36,+Costa+de+Caparica/@38.646361,-9.2416429" target="_blank" class="underline">Ver en mapa</a>',
+          payment: '💳 Aceptamos:<br>Visa, Mastercard, Amex<br>PayPal, Apple Pay, Google Pay<br>SEPA y Klarna',
+          promo: '🎉 Sigue nuestro Instagram para promociones:<br><a href="https://instagram.com/apolinarius_barbershop" target="_blank" class="underline">@apolinarius_barbershop</a>',
+          fallback: 'Disculpa, no entendí bien. Puedes usar los botones rápidos o escribir: cita, horarios, ubicación, pagos o promociones.'
+        },
+        fr: {
+          greeting: '👋 Bonjour! Bienvenue à Apolinariu\'s Barber. Comment puis-je vous aider?',
+          schedule: '✨ Réservez maintenant sur Treatwell: <a href="https://widget.treatwell.pt/estabelecimento/apolinarius-barbershop/" target="_blank" class="underline font-bold">Ouvrir réservation</a>',
+          hours: '⏰ Lun-Ven: 10h00-20h00<br>Sam: 09h00-18h00<br>Dim: Fermé',
+          services: '✂️ Nous avons 3 catégories:<br>• Services Généraux (10-35€)<br>• Directeur Créatif (23-37€)<br>• Salle Exclusive (25-45€)<br><br>Lequel vous intéresse?',
+          location: '📍 Miguel Torga 36, Boutique A<br>2825-326 Costa de Caparica<br><a href="https://www.google.com/maps/search/Miguel+Torga+36,+Costa+de+Caparica/@38.646361,-9.2416429" target="_blank" class="underline">Voir sur la carte</a>',
+          payment: '💳 Nous acceptons:<br>Visa, Mastercard, Amex<br>PayPal, Apple Pay, Google Pay<br>SEPA et Klarna',
+          promo: '🎉 Suivez notre Instagram pour les promotions:<br><a href="https://instagram.com/apolinarius_barbershop" target="_blank" class="underline">@apolinarius_barbershop</a>',
+          fallback: 'Désolé, je n\'ai pas bien compris. Vous pouvez utiliser les boutons rapides ou écrire: rendez-vous, horaires, localisation, paiements ou promotions.'
+        }
+      };
+
+      function appendMessage(text, from = 'bot') {
+        const wrapper = document.createElement('div');
+        wrapper.className = from === 'user' ? 'flex justify-end' : 'flex justify-start';
+        const bubble = document.createElement('div');
+        bubble.className = from === 'user'
+          ? 'bg-yellow-400 text-black px-4 py-2 rounded-lg max-w-[80%] shadow'
+          : 'bg-gray-700 text-gray-100 px-4 py-2 rounded-lg max-w-[80%] shadow';
+        bubble.innerHTML = text;
+        wrapper.appendChild(bubble);
+        messages.appendChild(wrapper);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function botReply(text) {
+        const q = text.toLowerCase();
+        const responses = chatbotResponses[currentLang] || chatbotResponses.pt;
+
+        if (q.includes('agend') || q.includes('reserv')) {
+          appendMessage(responses.schedule, 'bot');
+          return;
+        }
+
+        if (q.includes('horário') || q.includes('horario') || q.includes('horas') || q.includes('hours') || q.includes('heure') || q.includes('hora') || q.includes('ver')) {
+          appendMessage(responses.hours, 'bot');
+          return;
+        }
+
+        if (q.includes('serviço') || q.includes('servico') || q.includes('preço') || q.includes('preco') || q.includes('service') || q.includes('servicio') || q.includes('corte')) {
+          appendMessage(responses.services, 'bot');
+          return
+        }
+
+        if (q.includes('localiza') || q.includes('onde') || q.includes('mapa') || q.includes('ficam') || q.includes('location') || q.includes('donde') || q.includes('localisation')) {
+          appendMessage(responses.location, 'bot');
+          return;
+        }
+
+        if (q.includes('pagamento') || q.includes('pagar') || q.includes('cartão') || q.includes('cartao') || q.includes('payment') || q.includes('pago') || q.includes('paiement')) {
+          appendMessage(responses.payment, 'bot');
+          return;
+        }
+
+        if (q.includes('promoç') || q.includes('promoc') || q.includes('desconto') || q.includes('oferta') || q.includes('promotion') || q.includes('promoción') || q.includes('promotion')) {
+          appendMessage(responses.promo, 'bot');
+          return;
+        }
+
+        appendMessage(responses.fallback, 'bot');
+      }
+
+      toggle.addEventListener('click', () => {
+        box.classList.toggle('hidden');
+        if (!box.classList.contains('hidden')) {
+          if (messages.children.length === 0) {
+            const responses = chatbotResponses[currentLang] || chatbotResponses.pt;
+            appendMessage(responses.greeting, 'bot');
+          }
+        }
+      });
+
+      closeBtn.addEventListener('click', () => box.classList.add('hidden'));
+
+      // Language selection buttons
+      document.querySelectorAll('.chat-lang').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.lang;
+          currentLang = lang;
+          messages.innerHTML = '';
+          const responses = chatbotResponses[currentLang] || chatbotResponses.pt;
+          appendMessage(responses.greeting, 'bot');
+        });
+      });
+
+      document.querySelectorAll('.chat-quick').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const msg = btn.dataset.msg;
+          appendMessage(msg, 'user');
+          botReply(msg);
+        });
+      });
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+
+</html>
